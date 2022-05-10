@@ -8,6 +8,24 @@ Comment.init(
     body: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "User",
+        key: "id"
+      }
+    },
+    postId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "Post",
+        key: "id"
+      }
+    },
+    date: {
+      type: DataTypes.DATE,
+      defaultValue: Sequelize.NOW,
     }
   },
   {
@@ -15,7 +33,7 @@ Comment.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'User'
+    modelName: 'Comment'
   }
 );
 
