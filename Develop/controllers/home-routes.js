@@ -3,12 +3,21 @@ const { Post, Comment, User } = require('../models/');
 
 // get all posts for homepage
 router.get('/', async (req, res) => {
-  
+
+  try {
+    const posts = await Post.findAll();
+    res.render('all-posts', {
+
+    })
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 // get single post
 router.get('/post/:id', async (req, res) => {
- 
+
 });
 
 router.get('/login', (req, res) => {
