@@ -16,6 +16,18 @@
             </div>
         </div>
 
+        {{#each post.Comments as |comment|}}
+        <div class="card-header">
+            <h2>{{comment.User.username}} says:</h2>
+        </div>
+        <div class="card-body">
+            {{comment.body}}
+        </div>
+        <div>
+            commented on {{comment.date}}
+        </div>
+        {{/each}}
+
         <div class="card-header">
             <h2>Add Comment</h2>
         </div>
