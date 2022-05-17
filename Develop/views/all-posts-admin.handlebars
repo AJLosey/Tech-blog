@@ -1,3 +1,24 @@
-<div class="posts list-group">
- 
+<div class="posts">
+    <ul>
+        {{#each posts as |post|}}
+        <li>
+            <div class="card">
+                <div class="card-header">
+                    <h2>{{post.title}}</h2>
+                </div>
+                <div class="card-body">
+                    {{post.body}}
+                </div>
+                <div class="row justify-content-between">
+                    <div>
+                        user# {{post.userId}}
+                    </div>
+                    <div>
+                        last updated {{post.date}}
+                    </div>
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
 </div>

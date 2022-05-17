@@ -2,18 +2,20 @@
     <ul>
         {{#each posts as |post|}}
         <li>
-            <div class="h2">
-                {{post.title}}
-            </div>
-            <div>
-                {{post.body}}
-            </div>
-            <div class="row justify-between">
-                <div class="col-9">
-                    {{post.userId}}
+            <div class="card">
+                <div class="card-header">
+                    <h2>{{post.title}}</h2>
                 </div>
-                <div class="col-2">
-                    last updated {{post.updatedAt}}
+                <div class="card-body">
+                    {{post.body}}
+                </div>
+                <div class="row justify-content-between">
+                    <div>
+                        user# {{post.userId}}
+                    </div>
+                    <div>
+                        last updated {{post.date}}
+                    </div>
                 </div>
             </div>
         </li>
