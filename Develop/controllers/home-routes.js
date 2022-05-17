@@ -20,7 +20,27 @@ router.get('/', async (req, res) => {
 
 // get single post
 router.get('/post/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: {
+        model: User,
+        attributes: [
+          'username'
+        ]
+      }
+    });
 
+    const post = postData.get({ plain: true });
+
+    console.log(post);
+
+    res.render('single-post', {
+      post
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.get('/login', (req, res) => {
