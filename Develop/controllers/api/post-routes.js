@@ -15,6 +15,7 @@ router.post('/', withAuth, async (req, res) => {
 
 router.put('/:id', withAuth, async (req, res) => {
   try {
+    console.log("update req.body" + req.body);
     const [affectedRows] = await Post.update(req.body, {
       where: {
         id: req.params.id,
@@ -25,6 +26,7 @@ router.put('/:id', withAuth, async (req, res) => {
       res.status(200).end();
     } else {
       res.status(404).end();
+      console.log("affected rows" + affectedRows);
     }
   } catch (err) {
     res.status(500).json(err);

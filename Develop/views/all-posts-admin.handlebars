@@ -2,7 +2,7 @@
     <ul>
         {{#each posts as |post|}}
         <li>
-            <div class="card">
+            <div class="card" onclick="window.location='/dashboard/edit/{{post.id}}';">
                 <div class="card-header">
                     <h2>{{post.title}}</h2>
                 </div>
