@@ -1,0 +1,39 @@
+<div class="post card">
+    <div class="card">
+        <div class="card-header">
+            <h2>{{post.title}}</h2>
+            <h3 id="post-id">{{post.id}}</h3>
+        </div>
+        <div class="card-body">
+            {{post.body}}
+        </div>
+        <div>
+            <div>
+                {{post.User.username}}
+            </div>
+            <div>
+                posted on {{post.date}}
+            </div>
+        </div>
+    </div>
+
+    <div class="card-header">
+        <h2>Edit Post</h2>
+    </div>
+    <div id="update-post" role="tabpanel">
+        <form id="update-post-form" class="card-body">
+            <div>
+                <label for="post-body">Write the new post content here</label>
+                <input type="text" id="post-body" />
+            </div>
+            <button type="submit" id="update-btn" class="btn">Edit!</button>
+        </form>
+    </div>
+
+    <div class="card-header" id="delete-btn">
+        <h2>Delete Post</h2>
+    </div>
+
+
+
+    <script src="/js/edit.js"></script>
